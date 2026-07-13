@@ -13,7 +13,7 @@
 
     <h1>Student Feedback App</h1>
 
-    <form>
+    <form id="feedbackForm>"
         <label for="studentName">Student Name:</label>
         <input type="text" id="studentName" placeholder="Enter your full  name" required>
 
@@ -59,16 +59,15 @@
 
 
         <label>Rating:</label>
+<div class="rating">
+    <label><input type="radio" name="rating" value="1"> ⭐</label>
+    <label><input type="radio" name="rating" value="2"> ⭐⭐</label>
+    <label><input type="radio" name="rating" value="3"> ⭐⭐⭐</label>
+    <label><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐</label>
+    <label><input type="radio" name="rating" value="5"> ⭐⭐⭐⭐⭐</label>
+</div>
+
         
-        <div class="rating">
-
-            <span>⭐</span>
-            <span>⭐</span>
-            <span>⭐</span>
-            <span>⭐</span>
-            <span>⭐</span>
-
-        </div>
 
         <label>
             <input type="checkbox" id="anonymous">
@@ -83,6 +82,9 @@
 
     </form>
    </div> 
+
+   <script src="script.js"></script>
+   </script>
 
 </body>
 </html>
