@@ -21,5 +21,27 @@ form.addEventListener("submit", function(event) {
     console.log(feedback);
     console.log(rating);
 
-    alert("Feedback submitted successfully!");
+    fetch("http://127.0.0.1:5000/submit-feedback", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        studentName,
+        regNo,
+        department,
+        semester,
+        course,
+        faculty,
+        feedback,
+        rating
+    })
+})
+.then(response => response.json())
+.then(data => {
+    alert(data.message);
+})
+.catch(error => {
+    console.error(error);
+});
 });
