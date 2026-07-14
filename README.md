@@ -113,6 +113,4 @@ Stores:
 
 **Pranya Mishra**
 
-B.Tech CSE (AI/ML)
 
-SRM Institute of Science and Technology
