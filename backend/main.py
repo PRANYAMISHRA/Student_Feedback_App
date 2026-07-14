@@ -34,6 +34,37 @@ def submit_feedback():
         "message": "Feedback saved successfully!"
     })
 
+@app.route("/get-feedback", methods=["GET"])
+def get_feedback():
+
+    conn = sqlite3.connect("feedback.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    SELECT student_name, reg_no, department,
+           semester, course, faculty,
+           feedback, rating
+    FROM feedback
+    """)
+
+    rows = cursor.fetchall()
+    conn.close()
+
+    feedback_list = []
+
+    for row in rows:
+        feedback_list.append({
+            "studentName": row[0],
+            "regNo": row[1],
+            "department": row[2],
+            "semester": row[3],
+            "course": row[4],
+            "faculty": row[5],
+            "feedback": row[6],
+            "rating": row[7]
+        })
+
+    return jsonify(feedback_list)
 
 
 def init_db():
